@@ -1,0 +1,36 @@
+{
+  "name": "electron-webpack-quick-start",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luiz-alves-playkids/electron-builder-poc.git"
+  },
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "release": "build"
+  },
+  "build": {
+    "appId": "org.batata.electron-builder-test",
+    "publish": {
+      "provider": "github",
+      "token": "ad0e74f4250b1fc63c4d946cae3ea02cf14490b9"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false
+    }
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.16"
+  },
+  "devDependencies": {
+    "electron": "8.2.0",
+    "electron-builder": "^22.4.1",
+    "electron-webpack": "^2.8.2",
+    "webpack": "~4.42.1"
+  }
+}
